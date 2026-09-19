@@ -7,11 +7,7 @@ AI-powered public digital footprint intelligence and cross-platform identity res
 
 **Problem Statement:** Public Profile & Digital Footprint Intelligence
 
-**Team:** `<Team Name>` · `<Member 1>` · `<Member 2>` · `<Member 3>` · `<Member 4>`
-
-> **One consented photo + limited context → an evidence-backed map of a person's public digital footprint, with transparent confidence and clear uncertainty.**
-
----
+**Team:** `<Euphoria>` · `<P Keerthika Reddy>` · `<N S Shree>` · `<P Pujya Mahathi>` · `<Chindam Charanya>`
 
 ## 1. Problem Statement
 
