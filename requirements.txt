@@ -1,0 +1,11 @@
+streamlit
+streamlit-agraph
+sentence-transformers
+scikit-learn
+requests
+python-dotenv
+rapidfuzz
+opencv-python-headless
+numpy
+insightface
+onnxruntime

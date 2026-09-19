@@ -1,0 +1,220 @@
+{
+  "targets": [
+    {
+      "name": "Aarav Mehta",
+      "context": "ML engineer in Hyderabad, works on NLP",
+      "image": "test_images/aarav.jpg",
+      "candidates": [
+        {
+          "platform": "github",
+          "username": "aarav-ml",
+          "display_name": "Aarav Mehta",
+          "profile_url": "https://github.com/aarav-ml",
+          "bio": "NLP engineer. Open-source contributor. Building ML tools for Indian languages.",
+          "photo_url": "test_images/aarav_gh.jpg",
+          "links": ["https://aaravmehta.dev", "https://linkedin.com/in/aarav-mehta"],
+          "location": "Hyderabad",
+          "extra": {
+            "repos": [
+              {"name": "nlp-tools", "desc": "NLP utilities for Hindi", "created": "2023-05-15"},
+              {"name": "ml-pipeline", "desc": "End-to-end ML pipeline framework", "created": "2024-01-20"}
+            ],
+            "events": [
+              {"type": "talk", "title": "PyCon India 2024: NLP at Scale", "date": "2024-09"}
+            ]
+          },
+          "retrieved_at": "2026-01-15T10:32:00Z"
+        },
+        {
+          "platform": "linkedin",
+          "username": "aarav-mehta",
+          "display_name": "Aarav Mehta",
+          "profile_url": "https://linkedin.com/in/aarav-mehta",
+          "bio": "Machine Learning Engineer at TechCorp Hyderabad | NLP Researcher | Open Source",
+          "photo_url": "test_images/aarav_li.jpg",
+          "links": ["https://github.com/aarav-ml", "https://aaravmehta.dev"],
+          "location": "Hyderabad, India",
+          "extra": {
+            "events": [
+              {"type": "conference", "title": "AI Summit Hyderabad 2024 Speaker", "date": "2024-03"}
+            ]
+          },
+          "retrieved_at": "2026-01-15T10:32:00Z"
+        },
+        {
+          "platform": "x",
+          "username": "aarav_ml",
+          "display_name": "Aarav Mehta",
+          "profile_url": "https://x.com/aarav_ml",
+          "bio": "NLP engineer 🇮🇳 | Building ML tools | Hyderabad",
+          "photo_url": "test_images/aarav_x.jpg",
+          "links": ["https://github.com/aarav-ml"],
+          "location": "Hyderabad",
+          "extra": {
+            "events": []
+          },
+          "retrieved_at": "2026-01-15T10:32:00Z"
+        },
+        {
+          "platform": "github",
+          "username": "aarav123",
+          "display_name": "Aarav Mehta",
+          "profile_url": "https://github.com/aarav123",
+          "bio": "Chef and food photographer. Love cooking Indian cuisine.",
+          "photo_url": "test_images/other1.jpg",
+          "links": ["https://foodblog.com"],
+          "location": "Delhi",
+          "extra": {
+            "repos": [
+              {"name": "recipe-book", "desc": "Collection of Indian recipes", "created": "2022-08-10"}
+            ]
+          },
+          "retrieved_at": "2026-01-15T10:32:00Z"
+        },
+        {
+          "platform": "linkedin",
+          "username": "aarav-mehta-chef",
+          "display_name": "Aarav Mehta",
+          "profile_url": "https://linkedin.com/in/aarav-mehta-chef",
+          "bio": "Executive Chef at Grand Hotel Delhi | Culinary Arts Graduate",
+          "photo_url": "test_images/other2.jpg",
+          "links": [],
+          "location": "Delhi, India",
+          "extra": {},
+          "retrieved_at": "2026-01-15T10:32:00Z"
+        },
+        {
+          "platform": "x",
+          "username": "chef_aarav",
+          "display_name": "Aarav Mehta",
+          "profile_url": "https://x.com/chef_aarav",
+          "bio": "Chef | Food blogger | Delhi | Sharing recipes and food photography",
+          "photo_url": "test_images/other3.jpg",
+          "links": ["https://foodblog.com"],
+          "location": "Delhi",
+          "extra": {},
+          "retrieved_at": "2026-01-15T10:32:00Z"
+        },
+        {
+          "platform": "web",
+          "username": "aarav-mehta-portfolio",
+          "display_name": "Aarav Mehta",
+          "profile_url": "https://aaravmehta-portfolio.com",
+          "bio": "Aarav Mehta - Professional portfolio",
+          "photo_url": "",
+          "links": [],
+          "location": "Hyderabad",
+          "extra": {},
+          "retrieved_at": "2026-01-15T10:32:00Z"
+        }
+      ]
+    },
+    {
+      "name": "Priya Sharma",
+      "context": "UX/UI designer in Bangalore, specializes in mobile apps",
+      "image": "test_images/priya.jpg",
+      "candidates": [
+        {
+          "platform": "github",
+          "username": "priya-design",
+          "display_name": "Priya Sharma",
+          "profile_url": "https://github.com/priya-design",
+          "bio": "UX/UI Designer | Mobile app design | Open source UI components",
+          "photo_url": "test_images/priya_gh.jpg",
+          "links": ["https://priyasharma.design", "https://linkedin.com/in/priya-sharma"],
+          "location": "Bangalore",
+          "extra": {
+            "repos": [
+              {"name": "react-ui-kit", "desc": "Reusable React UI components", "created": "2023-11-05"},
+              {"name": "design-system", "desc": "Design system documentation", "created": "2024-02-15"}
+            ],
+            "events": [
+              {"type": "workshop", "title": "Design Systems Workshop Bangalore", "date": "2024-06"}
+            ]
+          },
+          "retrieved_at": "2026-01-15T10:32:00Z"
+        },
+        {
+          "platform": "linkedin",
+          "username": "priya-sharma",
+          "display_name": "Priya Sharma",
+          "profile_url": "https://linkedin.com/in/priya-sharma",
+          "bio": "Senior UX/UI Designer at StartupHub Bangalore | Mobile App Specialist | Design Systems",
+          "photo_url": "test_images/priya_li.jpg",
+          "links": ["https://github.com/priya-design", "https://priyasharma.design"],
+          "location": "Bangalore, India",
+          "extra": {
+            "events": [
+              {"type": "conference", "title": "UX India 2024 Speaker", "date": "2024-11"}
+            ]
+          },
+          "retrieved_at": "2026-01-15T10:32:00Z"
+        },
+        {
+          "platform": "x",
+          "username": "priya_ux",
+          "display_name": "Priya Sharma",
+          "profile_url": "https://x.com/priya_ux",
+          "bio": "UX/UI Designer 🎨 | Mobile apps | Bangalore | Design systems",
+          "photo_url": "test_images/priya_x.jpg",
+          "links": ["https://github.com/priya-design"],
+          "location": "Bangalore",
+          "extra": {},
+          "retrieved_at": "2026-01-15T10:32:00Z"
+        },
+        {
+          "platform": "github",
+          "username": "priya-sharma-dev",
+          "display_name": "Priya Sharma",
+          "profile_url": "https://github.com/priya-sharma-dev",
+          "bio": "Full-stack developer | Backend engineer | Node.js specialist",
+          "photo_url": "test_images/other4.jpg",
+          "links": ["https://devblog.com"],
+          "location": "Mumbai",
+          "extra": {
+            "repos": [
+              {"name": "node-api", "desc": "REST API boilerplate", "created": "2022-12-01"}
+            ]
+          },
+          "retrieved_at": "2026-01-15T10:32:00Z"
+        },
+        {
+          "platform": "linkedin",
+          "username": "priya-sharma-dev",
+          "display_name": "Priya Sharma",
+          "profile_url": "https://linkedin.com/in/priya-sharma-dev",
+          "bio": "Software Engineer at TechMumbai | Backend Development | Node.js",
+          "photo_url": "test_images/other5.jpg",
+          "links": [],
+          "location": "Mumbai, India",
+          "extra": {},
+          "retrieved_at": "2026-01-15T10:32:00Z"
+        },
+        {
+          "platform": "x",
+          "username": "priya_dev",
+          "display_name": "Priya Sharma",
+          "profile_url": "https://x.com/priya_dev",
+          "bio": "Software Developer | Mumbai | Node.js | Backend",
+          "photo_url": "test_images/other6.jpg",
+          "links": ["https://devblog.com"],
+          "location": "Mumbai",
+          "extra": {},
+          "retrieved_at": "2026-01-15T10:32:00Z"
+        },
+        {
+          "platform": "web",
+          "username": "priya-sharma-portfolio",
+          "display_name": "Priya Sharma",
+          "profile_url": "https://priyasharma-portfolio.com",
+          "bio": "Priya Sharma - Portfolio",
+          "photo_url": "",
+          "links": [],
+          "location": "Bangalore",
+          "extra": {},
+          "retrieved_at": "2026-01-15T10:32:00Z"
+        }
+      ]
+    }
+  ]
+}
