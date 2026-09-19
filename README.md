@@ -230,4 +230,8 @@ Therefore, the system presents **evidence-backed leads and confidence levels rat
 
 FootprintAI aims to transform fragmented public digital information into a **structured, evidence-backed digital footprint map**.
 
+<<<<<<< HEAD
 By combining multimodal AI, cross-platform correlation, confidence-aware reasoning, and responsible-use safeguards, the system helps users understand how publicly available information connects across the digital ecosystem—while clearly distinguishing **evidence, uncertainty, and human judgment**.
+=======
+By combining multimodal AI, cross-platform correlation, confidence-aware reasoning, and responsible-use safeguards, the system helps users understand how publicly available information connects across the digital ecosystem—while clearly distinguishing **evidence, uncertainty, and human judgment**.
+>>>>>>> 97dc2a11b24fc3438fa1d22aa37b2b840a339c8a
