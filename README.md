@@ -1,7 +1,6 @@
-# footprintai
-AI-powered public digital footprint intelligence and cross-platform identity resolution.
-
 # FootprintAI — Digital Identity Intelligence Engine
+
+**AI-powered public digital footprint intelligence and cross-platform identity resolution.**
 
 **Neurax Hackathon 3.0 · Domain 3: AI in Cybersecurity**
 
@@ -9,174 +8,250 @@ AI-powered public digital footprint intelligence and cross-platform identity res
 
 **Team:** `<Euphoria>` · `<P Keerthika Reddy>` · `<N S Shree>` · `<P Pujya Mahathi>` · `<Chindam Charanya>`
 
-## 1. Problem Statement
+> **One consented photo + limited context → an evidence-backed map of a person's public digital footprint, with transparent confidence and clear uncertainty.**
 
-A person's public digital presence is distributed across multiple platforms such as GitHub, LinkedIn, X, Instagram, YouTube, personal websites, conferences, publications, and patent databases.
+---
+
+# 1. Problem Understanding
+
+## 1.1 The Problem
+
+A person's public digital presence is distributed across multiple independent platforms such as GitHub, LinkedIn, X, Instagram, YouTube, personal websites, conferences, publications, and patent databases.
 
 Manually determining whether these scattered profiles belong to the same individual is difficult because of:
 
-* Common or duplicate names
-* Different usernames and aliases across platforms
-* Incomplete or inconsistent profiles
-* Conflicting information between sources
-* Lack of verifiable evidence connecting profiles
+* **Common or duplicate names** — multiple people may share the same name.
+* **Different usernames and aliases** — the same person may use different identifiers across platforms.
+* **Incomplete profiles** — accounts may contain limited information or no profile image.
+* **Conflicting information** — profiles may contain inconsistent locations, affiliations, roles, or other details.
+* **Lack of verifiable evidence** — finding a profile does not necessarily prove that it belongs to the same individual.
 
-Existing approaches often rely on individual signals such as name matching or image similarity, which can result in incorrect associations.
+Existing approaches often rely on individual signals such as name matching or image similarity. These approaches can produce incorrect associations when used in isolation.
 
-### Our Goal
+## 1.2 The Core Gap
 
-Build an AI-powered system that can **discover, correlate, and verify publicly available digital-footprint information across multiple sources while explicitly handling uncertainty.**
+The challenge is not simply **finding information about a person**.
 
----
+The challenge is determining:
 
-## 2. Proposed Solution
+> **Which publicly available pieces of information are likely connected to the same individual, and what evidence supports that connection?**
 
-**FootprintAI** is a software-based digital identity intelligence system designed to correlate public information from multiple sources.
+FootprintAI addresses this gap by correlating **multiple independent signals across public sources** while explicitly representing uncertainty.
 
-Given a **consented image and limited contextual information**, the system:
+## 1.3 Our Goal
 
-1. Identifies potential public profiles associated with the input.
-2. Discovers publicly available information across supported platforms.
-3. Resolves names, usernames, and aliases across sources.
-4. Correlates multiple independent signals to determine whether profiles are likely to represent the same person.
-5. Organizes discovered information into a **timeline and relationship graph**.
-6. Provides **source-backed evidence and confidence scores** for findings.
-7. Flags ambiguous or conflicting information instead of automatically making unsupported conclusions.
+Build an AI-powered system that can:
 
-The system is designed to provide **investigative leads supported by evidence, rather than claiming absolute identity verification.**
+**Discover → Correlate → Evaluate → Explain**
+
+publicly available digital-footprint information across multiple sources while avoiding unsupported conclusions.
 
 ---
 
-## 3. Key Innovation
+# 2. Proposed Solution
 
-### Multi-Modal Identity Resolution
+**FootprintAI** is a software-based digital identity intelligence system designed to correlate fragmented public information across multiple sources.
 
-Instead of relying on a single matching technique, FootprintAI combines multiple signals:
+Given a **consented image and limited contextual information**, the proposed system:
 
-* **Face similarity** — compares facial embeddings from consented images and public profile images.
-* **Semantic similarity** — compares profile descriptions and contextual information based on meaning rather than exact keywords.
-* **Relationship evidence** — analyzes links and connections between profiles and websites.
-* **Alias resolution** — identifies variations in names and usernames.
+1. **Discovers** potentially relevant public profiles.
+2. **Extracts** useful identity and contextual information.
+3. **Resolves** variations in names, usernames, and aliases.
+4. **Correlates** multiple independent signals to assess whether profiles are likely associated with the same individual.
+5. **Organizes** connected information into a timeline and relationship graph.
+6. **Provides** source-backed evidence and confidence levels for findings.
+7. **Flags** ambiguous or conflicting results for human review.
 
-These signals are combined into a confidence score to determine whether a candidate profile should be considered verified, reviewed, or rejected.
+The system is designed to produce **evidence-backed investigative leads rather than absolute identity claims**.
 
-### Evidence-First Intelligence
+---
 
-Every significant finding is associated with:
+# 3. System Architecture
+
+## 3.1 High-Level Architecture
+
+```text
+┌───────────────────────────────────────┐
+│               INPUT                   │
+│  Consented Image + Limited Context    │
+└───────────────────┬───────────────────┘
+                    │
+                    ▼
+┌───────────────────────────────────────┐
+│      STAGE 0 — INPUT VALIDATION       │
+│  • Consent confirmation               │
+│  • Image / input validation            │
+└───────────────────┬───────────────────┘
+                    │
+                    ▼
+┌───────────────────────────────────────┐
+│      STAGE 1 — FEATURE EXTRACTION     │
+│  • Face embedding                     │
+│  • Name / alias variations             │
+│  • Contextual signals                 │
+└───────────────────┬───────────────────┘
+                    │
+                    ▼
+┌───────────────────────────────────────┐
+│      STAGE 2 — PUBLIC DISCOVERY       │
+│  • GitHub                             │
+│  • LinkedIn / X / Instagram / YouTube │
+│  • Public websites & search results   │
+└───────────────────┬───────────────────┘
+                    │
+                    ▼
+┌───────────────────────────────────────┐
+│    STAGE 3 — MULTI-MODAL RESOLUTION   │
+│                                       │
+│  Face Similarity                      │
+│          +                            │
+│  Semantic Similarity                  │
+│          +                            │
+│  Cross-Profile Evidence               │
+│          ↓                            │
+│  Confidence Assessment                │
+└───────────────────┬───────────────────┘
+                    │
+                    ▼
+┌───────────────────────────────────────┐
+│     STAGE 4 — EVIDENCE & OUTPUT       │
+│  • Evidence sources                   │
+│  • Confidence levels                  │
+│  • Timeline                           │
+│  • Relationship graph                 │
+│  • Review flags                       │
+└───────────────────┬───────────────────┘
+                    │
+                    ▼
+┌───────────────────────────────────────┐
+│                OUTPUT                 │
+│ Evidence-backed Digital Footprint     │
+│              Intelligence             │
+└───────────────────────────────────────┘
+```
+
+## 3.2 Architecture Components
+
+| Stage                      | Responsibility                                                           |
+| -------------------------- | ------------------------------------------------------------------------ |
+| **Input & Validation**     | Accepts a consented image and limited contextual information.            |
+| **Feature Extraction**     | Generates visual, textual, and contextual signals.                       |
+| **Public Discovery**       | Finds potentially relevant public profiles and information.              |
+| **Multi-Modal Resolution** | Combines independent signals to assess potential identity relationships. |
+| **Evidence Layer**         | Associates findings with supporting public sources.                      |
+| **Intelligence Layer**     | Organizes results into timelines and relationship graphs.                |
+| **Review Layer**           | Surfaces uncertain or conflicting candidates for human review.           |
+
+---
+
+# 4. AI & Technical Approach
+
+## 4.1 Multi-Modal Identity Resolution
+
+FootprintAI does not rely on a single matching technique.
+
+Each candidate profile is evaluated using multiple independent signals:
+
+### 1. Face Similarity
+
+A face-recognition model generates an embedding from the consented input image and compares it with available public profile images.
+
+**Purpose:** Measure visual similarity between the input and potential profile images.
+
+### 2. Semantic Similarity
+
+A language-embedding model compares profile descriptions and contextual information based on **meaning rather than exact keyword matches**.
+
+**Purpose:** Determine whether information such as profession, interests, organizations, or background is semantically consistent.
+
+### 3. Cross-Profile Evidence
+
+The system analyzes publicly visible relationships between discovered profiles, websites, organizations, and other entities.
+
+For example:
+
+```text
+                Personal Website
+                 /      |      \
+                /       |       \
+               ▼        ▼        ▼
+           GitHub   LinkedIn   Other Profile
+```
+
+**Purpose:** Identify independent evidence that connects multiple online accounts.
+
+### 4. Alias & Username Resolution
+
+Name variations and usernames are normalized and compared to identify potential relationships between accounts.
+
+**Purpose:** Shortlist candidates even when the same person uses different identifiers across platforms.
+
+---
+
+## 4.2 Confidence-Based Decision Process
+
+The system combines the available signals into a confidence assessment:
+
+```text
+             Face Similarity
+                    +
+            Semantic Similarity
+                    +
+          Cross-Profile Evidence
+                    +
+           Alias / Context Signals
+                    │
+                    ▼
+          ┌─────────────────────┐
+          │ Confidence Assessment│
+          └──────────┬──────────┘
+                     │
+             ┌───────┴────────┐
+             ▼                ▼
+       Supported Match    Needs Review
+             │                │
+             ▼                ▼
+        Show Evidence     Flag Conflict /
+                          Missing Evidence
+```
+
+The system follows an **uncertainty-aware approach**:
+
+* **Supported Match** — multiple signals provide sufficient supporting evidence.
+* **Needs Review** — evidence is incomplete, weak, or conflicting.
+* **Rejected** — available evidence does not sufficiently support the candidate.
+
+A single signal, such as face similarity alone, is not sufficient to establish an identity connection.
+
+---
+
+# 5. Evidence & Explainability
+
+A core design principle of FootprintAI is:
+
+> **No significant finding should appear without supporting evidence.**
+
+Each finding is intended to contain:
 
 * Source URL
-* Retrieval timestamp
 * Supporting information
-* Confidence score
-* Verification status
+* Retrieval timestamp
+* Confidence level
+* Verification/review status
 
-This makes the output **traceable and auditable** rather than simply presenting an unexplained AI-generated result.
-
-### Uncertainty-Aware Design
-
-FootprintAI does not force a conclusion when evidence is insufficient.
-
-Potential matches can be classified as:
-
-* **Verified**
-* **Needs Review**
-* **Rejected**
-
-Ambiguous or conflicting candidates are surfaced for human review instead of being silently merged.
+This makes the output **traceable and auditable**, allowing users to understand **why** a profile or relationship was identified rather than receiving an unexplained AI-generated result.
 
 ---
 
-## 4. System Workflow
+# 6. Expected Output
 
-```text
-Consented Image + Context
-          │
-          ▼
-┌───────────────────────────┐
-│  Consent & Input Validation│
-└─────────────┬─────────────┘
-              ▼
-┌───────────────────────────┐
-│ Feature Extraction        │
-│ • Face Embedding          │
-│ • Name / Context Signals  │
-└─────────────┬─────────────┘
-              ▼
-┌───────────────────────────┐
-│ Public Profile Discovery  │
-│ • GitHub                  │
-│ • LinkedIn                │
-│ • X / Instagram / YouTube │
-│ • Web & Public Sources    │
-└─────────────┬─────────────┘
-              ▼
-┌───────────────────────────┐
-│ Multi-Modal Resolution    │
-│ • Face Similarity         │
-│ • Semantic Similarity     │
-│ • Cross-Profile Evidence  │
-└─────────────┬─────────────┘
-              ▼
-┌───────────────────────────┐
-│ Evidence & Intelligence   │
-│ • Confidence              │
-│ • Timeline                │
-│ • Relationship Graph      │
-│ • Audit Trail             │
-└───────────────────────────┘
-```
-
----
-
-## 5. AI & Technical Approach
-
-FootprintAI uses multiple AI and data-processing components:
-
-| Component                  | Technology                       | Purpose                                                                   |
-| -------------------------- | -------------------------------- | ------------------------------------------------------------------------- |
-| Face Analysis              | InsightFace, ONNX Runtime        | Generate and compare facial embeddings                                    |
-| Semantic Matching          | Sentence Transformers            | Compare profile descriptions by meaning                                   |
-| Fuzzy Matching             | RapidFuzz                        | Resolve name and username variations                                      |
-| Public Discovery           | GitHub API + Web Search          | Discover publicly available profiles and information                      |
-| Information Extraction     | Python-based extraction pipeline | Identify organizations, events, projects, publications and other entities |
-| Intelligence Visualization | Streamlit + Graph Visualization  | Present relationships, timeline and evidence                              |
-
-### Confidence Model
-
-Candidate identities are evaluated using a combination of independent signals:
-
-```text
-Confidence =
-    Face Similarity
-  + Semantic Similarity
-  + Cross-Profile Evidence
-```
-
-A candidate is not considered verified based on a single signal alone.
-
----
-
-## 6. Responsible Use & Privacy
-
-FootprintAI is designed with privacy and responsible AI principles from the beginning.
-
-* **Consent required:** The system is intended for organizer-provided, authorized, or synthetic inputs.
-* **Public information only:** No private accounts or restricted information are accessed.
-* **No credential collection:** The system does not use passwords or bypass access controls.
-* **Evidence-backed results:** Findings are accompanied by their supporting sources.
-* **Human-in-the-loop:** Ambiguous matches are presented for review rather than automatically accepted.
-* **Data minimization:** Uploaded images are processed for the session and are not intended to become a persistent identity database.
-
----
-
-## 7. Expected Output
-
-The system produces an interactive digital-footprint intelligence view containing:
+FootprintAI is designed to produce an interactive digital-footprint intelligence view containing:
 
 * Potentially related public profiles
 * Cross-platform identity associations
 * Organizations and affiliations
-* Projects, events and publications
+* Projects and events
+* Publications and other public activities
 * Chronological activity timeline
 * Relationship graph
 * Evidence sources
@@ -185,49 +260,88 @@ The system produces an interactive digital-footprint intelligence view containin
 
 ---
 
-## 8. Innovation Highlights
+# 7. Innovation
 
-1. **Multi-modal identity resolution** using face, semantic, and relationship signals.
-2. **Cross-platform correlation** instead of analyzing profiles independently.
-3. **Evidence-first intelligence** where findings remain traceable to public sources.
-4. **Uncertainty-aware decisions** that avoid forcing unsupported matches.
-5. **Human-in-the-loop verification** for ambiguous cases.
-6. **Privacy-aware architecture** built around consent and public information.
+### 1. Multi-Modal Identity Resolution
+
+Combines **face, semantic, contextual, and relationship signals** rather than relying on name or image matching alone.
+
+### 2. Cross-Platform Correlation
+
+Connects fragmented information across multiple public sources into a unified digital-footprint context.
+
+### 3. Evidence-First Intelligence
+
+Findings are designed to remain traceable to their supporting public sources.
+
+### 4. Uncertainty-Aware AI
+
+The system explicitly represents uncertainty instead of forcing every candidate into a binary match/no-match decision.
+
+### 5. Human-in-the-Loop Verification
+
+Ambiguous cases are surfaced for human review rather than automatically accepted.
 
 ---
 
-## 9. Scope & Limitations
+# 8. Responsible Use & Privacy
 
-FootprintAI is intended as a **digital-footprint intelligence and investigation-support tool**, not an absolute identity-verification system.
+FootprintAI is designed around responsible use of publicly available digital information.
 
-Its coverage depends on the availability of public information and permitted APIs. Social platforms may restrict automated access, and low-quality images can reduce face-matching reliability.
+* **Consent required:** The system is intended for organizer-provided, authorized, or synthetic inputs.
+* **Public information only:** It does not target private accounts or restricted information.
+* **No credential collection:** It does not use passwords or bypass access controls.
+* **Evidence-backed results:** Findings are linked to their supporting public sources.
+* **Human oversight:** Ambiguous results are presented for review.
+* **Data minimization:** The proposed design avoids creating a persistent database of uploaded facial images.
 
-Therefore, the system presents **evidence-backed leads and confidence levels rather than definitive claims of identity.**
+The system provides **investigative leads supported by evidence, not definitive judgments about identity.**
 
 ---
 
-## 10. Development Roadmap
+# 9. Technology Approach
+
+| Area                           | Proposed Technology / Approach           |
+| ------------------------------ | ---------------------------------------- |
+| **Face Analysis**              | InsightFace / facial embeddings          |
+| **Semantic Understanding**     | Sentence Transformers                    |
+| **Name & Username Resolution** | RapidFuzz / fuzzy matching               |
+| **Public Discovery**           | GitHub API + permitted public web search |
+| **Information Extraction**     | NLP / structured entity extraction       |
+| **Visualization**              | Streamlit + relationship graph           |
+| **Data Representation**        | Structured evidence records              |
+
+---
+
+# 10. Scope & Limitations
+
+FootprintAI is designed as a **digital-footprint intelligence and investigation-support system**, not an absolute identity-verification system.
+
+Its coverage depends on the availability of public information and permitted APIs. Social platforms may restrict automated access, while low-quality images and incomplete profiles can reduce matching reliability.
+
+The system therefore distinguishes between:
+
+**Evidence → Confidence → Uncertainty → Human Review**
+
+rather than presenting uncertain results as facts.
+
+---
+
+# 11. Development Roadmap
 
 | Phase            | Planned Deliverable                                                                              |
 | ---------------- | ------------------------------------------------------------------------------------------------ |
-| **Checkpoint 1** | Problem definition, solution architecture and project foundation                                 |
+| **Checkpoint 1** | Problem definition, solution architecture and technical approach                                 |
 | **Checkpoint 2** | Profile discovery, semantic matching and initial Streamlit interface                             |
 | **Checkpoint 3** | Face matching, cross-platform correlation, graph/timeline, evidence panel and robustness testing |
 
 ---
 
-## 11. Technology Stack
-
-**Python 3.11 · InsightFace · OpenCV · Sentence Transformers · scikit-learn · RapidFuzz · GitHub REST API · Web Search API · Streamlit · Graph Visualization**
-
----
-
-## 12. Conclusion
+# 12. Conclusion
 
 FootprintAI aims to transform fragmented public digital information into a **structured, evidence-backed digital footprint map**.
 
-<<<<<<< HEAD
-By combining multimodal AI, cross-platform correlation, confidence-aware reasoning, and responsible-use safeguards, the system helps users understand how publicly available information connects across the digital ecosystem—while clearly distinguishing **evidence, uncertainty, and human judgment**.
-=======
-By combining multimodal AI, cross-platform correlation, confidence-aware reasoning, and responsible-use safeguards, the system helps users understand how publicly available information connects across the digital ecosystem—while clearly distinguishing **evidence, uncertainty, and human judgment**.
->>>>>>> 97dc2a11b24fc3438fa1d22aa37b2b840a339c8a
+By combining **multi-modal AI, cross-platform correlation, confidence-aware reasoning, explainable evidence, and responsible-use safeguards**, FootprintAI provides a systematic way to understand how publicly available information may connect across the digital ecosystem.
+
+### **Find the evidence. Connect the signals. Show the confidence. Surface the uncertainty.**
+
