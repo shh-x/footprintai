@@ -1,3 +1,6 @@
+# footprintai
+AI-powered public digital footprint intelligence and cross-platform identity resolution.
+
 # FootprintAI — Digital Identity Intelligence Engine
 
 **Neurax Hackathon 3.0 · Domain 3: AI in Cybersecurity**
